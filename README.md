@@ -9,7 +9,7 @@
   - [Interpolacion de texto](#interpolacion-de-texto)
   - [v-bind (Interpolacion de texto en atributos)](#v-bind-interpolacion-de-texto-en-atributos)
   - [Expresiones de Javascript con interpolacion de texto](#expresiones-de-javascript-con-interpolacion-de-texto)
-  - [Directivas](#directivas)
+  - [Directivas ⬆](#directivas-)
     - [v-if, v-else-if y v-else](#v-if-v-else-if-y-v-else)
     - [v-show](#v-show)
     - [v-for](#v-for)
@@ -62,7 +62,7 @@
   Solo se puedn agregar ciertas expresiones de javascript utilizando la interpolacion de texto.
   ![expresiones de JS](image-6.png)
 
-## Directivas
+## Directivas [⬆](#indice)
   Son atributos especiales con prefijo `v-` que permiten aplicar comportamientos reactivos a nuestro DOM.
   ### v-if, v-else-if y v-else
   Se encarga de renderizar u ocultar elementos dependiendo de si cumple o no una condicion.
