@@ -20,6 +20,8 @@
     - [Reactividad ⬆](#reactividad-)
       - [ref() ⬆](#ref-)
         - [Pasos para usar ref() ⬆](#pasos-para-usar-ref-)
+    - [Propiedades Computadas ⬆](#propiedades-computadas-)
+        - [Pasos para usar las propiedades computadas ⬆](#pasos-para-usar-las-propiedades-computadas-)
 
 ## Instalacion [⬆](#indice)
   Para trabajar con vue, es necesario tener instalado node.js y npm (node package manager). Luego se puede proceder a instalar la version de Vue con la cual vas a trabajar.
@@ -66,7 +68,9 @@
   Son atributos especiales con prefijo `v-` que permiten aplicar comportamientos reactivos a nuestro DOM.
   ### v-if, v-else-if y v-else [⬆](#indice)
   Se encarga de renderizar u ocultar elementos dependiendo de si cumple o no una condicion.
+
   ![v-if, v-else-if y v-else](image-7.png)
+
   > **Nota** 
   > v-if, v-else-if y v-else son directivas que funcionan con la mimsa estructura que un if y un else en cualquier lenguaje de programacion.
 
@@ -89,13 +93,18 @@
   Si tenemos el siguiente objeto:
   
   ![objeto de ejemplo](image-11.png)
+
   Podemos acceder a las propiedades de un objeto de la siguiente forma:
+
   ![objeto impreso](image-12.png)
 
   ### v-for junto a v-if [⬆](#indice)
   Si tenemos el siguiente arreglo de objetos: 
+
   ![arreglo de objetos](image-13.png)
+
   Queremos imprimir los nombres de los usuarios que tengan menos de 30 años.
+
   ![arreglo de objetos impreso](image-14.png)
 
   ### v-on y modificadores de eventos [⬆](#indice)
@@ -104,9 +113,11 @@
   `v-on:click="handler"` o `@click="handler"`
 
   Primero creamos una funcion que sera llamada por el evento click.
+
   ![funcion handler](image-15.png)
 
   luego llamamos la funcion para ser usada con el evento click y con los modificadores de eventos que nos permiten hacer click solo con un boton respectivo del mouse.
+
   ![evento click y modificadores](image-16.png)
 
   ### Reactividad [⬆](#indice)
@@ -116,6 +127,30 @@
   * al utilizar ``ref()`` en un valor reactivo ,vue nos devuelve un objeto y para acceder a su valor real(valor inicial de la variable reactiva) tenemos que utiliza `.value` para realizar la mutacion(modificacion del valor inicial).
   ##### Pasos para usar ref() [⬆](#indice) 
   * importamos el metodo de la libreria de vue
-    
+    ```javascript 
+    import {ref} from 'vue';
+    ```
+  * creamos la funcion, que sera llamada cuando suceda un evento, que contiene el valor inicial de la variable reactiva(en nuestro caso es 0).
+
+  ### Propiedades Computadas [⬆](#indice)
+  Son funciones que calculan valores basados en otras propiedades. Nos sirven para generar calculos en nuestros componentes.
+  El `computed()` siempre recibe una funcion flecha qu nos retorna algo
+  ##### Pasos para usar las propiedades computadas [⬆](#indice)
+  * importamos el metodo de la libreria de vue
+    ```javascript 
+    import {computed} from 'vue';
+    ```
+  * escribimos la funcion que nos devolvera ciertos valores segun la condicion(en este caso ciertas clases).
+  
+  ![funcion](image-17.png)
+
+  * luego llamamos a la variable computada desde una clase en el elemento **Html**.
+  
+  ![llamada de la variable computada](image-18.png)
+
+  > **Nota** 
+  > En lugar de una propiedad computada podemos definir la misma funcion como un metodo ya que los dos enfoques dan el mismo resultado, sin embargo la diferencia es que las propiedades computadas se almacenan en cache en funcion se sus dependencias reactivas(una propiedad computada solo se volvera a evaluar cuando alguna de sus dependencias reactivas hayan cambiado)
+
+
 
 
