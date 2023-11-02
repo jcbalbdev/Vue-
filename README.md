@@ -22,6 +22,12 @@
         - [Pasos para usar ref() ⬆](#pasos-para-usar-ref-)
     - [Propiedades Computadas ⬆](#propiedades-computadas-)
         - [Pasos para usar las propiedades computadas ⬆](#pasos-para-usar-las-propiedades-computadas-)
+  - [Componentes ⬆](#componentes-)
+    - [Estructura basica de un componente](#estructura-basica-de-un-componente)
+    - [Importacion de un componente](#importacion-de-un-componente)
+    - [Formas para trabajar con un componente](#formas-para-trabajar-con-un-componente)
+      - [Option API](#option-api)
+      - [Composition API](#composition-api)
 
 ## Instalacion [⬆](#indice)
   Para trabajar con vue, es necesario tener instalado node.js y npm (node package manager). Luego se puede proceder a instalar la version de Vue con la cual vas a trabajar.
@@ -150,6 +156,35 @@
 
   > **Nota** 
   > En lugar de una propiedad computada podemos definir la misma funcion como un metodo ya que los dos enfoques dan el mismo resultado, sin embargo la diferencia es que las propiedades computadas se almacenan en cache en funcion se sus dependencias reactivas(una propiedad computada solo se volvera a evaluar cuando alguna de sus dependencias reactivas hayan cambiado)
+
+## Componentes [⬆](#indice)
+  ### Estructura basica de un componente
+  * **Etiqueta Script:** Aqui es donde va el Javascript o Typescript ademas se debe poner el atributo `setup`
+  * **Etiqueta template:** Aqui es donde va el html
+    > **Nota** 
+    > En `React` esta etiqueta seria equivalente a un fragment (`<> </>`)
+  * **Etiqueta style:** Aqui es donde van los estilos ademas se debe colocar el atributo `scoped` para que los estilos solo sean aplicables a cada componente creado, esto nos serviria para crear componentes mejor definidos.
+
+    ![Estructura basica de un componente](image-19.png)
+
+  ### Importacion de un componente
+  * Tan solo basta con importar el componente,poniendole un nombre que siempre debe iniciar con mayuscula, desde la ruta donde lo hemos creado.
+  
+    ![Importacion de un componente](image-20.png)
+
+  * Creamos la etiqueta que representa a nuestro componente.
+  
+    ![etiqueta que representa a nuestro componente](image-21.png)
+
+  ### Formas para trabajar con un componente
+  #### Option API
+  * Es la forma tradicional de estructurar los componentes y se basa en definir opciones como `data`, `methods`, `computed`, `watch`, etc., para especificar el comportamiento del componente (este concepto es parecido al concepto de ``clases de componentes`` en React). 
+  * desde la version 1 y 2 de Vue se esuvo trabajando con esta forma
+  #### Composition API
+  * Es un conjunto de herramientas que te permite organizar la logica de tus componentes de manera mas eficiente y reutilizable. En lugar de definir la logica del componente en opciones separadas (como `data`, `methods`, `computed`, `watch`, etc.), la composition API fomenta la agrupacion de la logica relacionada en funciones llamadas Composition Functions (este concepto es parecido al concepto de ``hooks`` en React).
+  * esta forma se integro en la version 3 de Vue
+
+
 
 
 
